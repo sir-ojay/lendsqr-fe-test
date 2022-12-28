@@ -1,0 +1,30 @@
+.button--red {
+  width: 170px;
+  height: 40px;
+  border: 1px solid #e4033b;
+  border-radius: 8px;
+  p {
+    font-family: "Work Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #e4033b;
+  }
+}
+@media screen and (min-width: 350px) and (max-width: 550px) {
+  .button--red {
+    width: 75px;
+    height: 50px;
+    padding: 5px;
+
+    p {
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}

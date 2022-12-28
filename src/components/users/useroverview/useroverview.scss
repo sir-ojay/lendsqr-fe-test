@@ -1,0 +1,191 @@
+.user--overview {
+  box-sizing: border-box;
+  width: 1080px;
+  background-color: #ffffff;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  height: 200px;
+  color: #545f7d;
+  margin: 40px;
+
+  .account--details {
+    padding: 20px;
+    display: flex;
+    justify-content: left;
+    width: 737px;
+
+    .icon--background {
+      margin: 10px;
+
+      .icon {
+        color: #1757d6;
+        border: 3px solid #0d56e7;
+        width: 27.92px;
+        height: 29.3px;
+        padding: 20px 20px;
+        border-radius: 100px;
+        opacity: 0.16;
+      }
+    }
+    .name {
+      .full--name {
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 26px;
+
+        p {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 16px;
+        }
+      }
+    }
+    .tier {
+      p {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+      }
+      .full--star {
+        color: #e9b200;
+        font-size: 22px;
+      }
+      .star {
+        color: #e9b200;
+        font-size: 22px;
+      }
+    }
+
+    .bank--details {
+      .money {
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 26px;
+
+        p {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 14px;
+        }
+      }
+    }
+  }
+
+  .general--details {
+    display: flex;
+    justify-content: space-around;
+
+    p {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+
+      &:hover {
+        color: #39cdcc;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #364141;
+      }
+    }
+  }
+}
+@media screen and (min-width: 350px) and (max-width: 550px) {
+  .user--overview {
+    box-sizing: border-box;
+    width: 93.5%;
+    background-color: #ffffff;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    height: 800px;
+    color: #545f7d;
+    margin: 10px;
+
+    .account--details {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 90%;
+
+      .icon--background {
+        margin: 10px;
+
+        .icon {
+          color: #1757d6;
+          border: 3px solid #0d56e7;
+          width: 27.92px;
+          height: 29.3px;
+          padding: 20px 20px;
+          border-radius: 100px;
+          opacity: 0.16;
+        }
+      }
+      .name {
+        .full--name {
+          font-weight: 500;
+          font-size: 22px;
+          line-height: 26px;
+
+          p {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+          }
+        }
+      }
+      .tier {
+        p {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 16px;
+        }
+        .full--star {
+          color: #e9b200;
+          font-size: 22px;
+        }
+        .star {
+          color: #e9b200;
+          font-size: 22px;
+        }
+      }
+
+      .bank--details {
+        .money {
+          font-weight: 500;
+          font-size: 22px;
+          line-height: 26px;
+
+          p {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+          }
+        }
+      }
+    }
+
+    .general--details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+
+        &:hover {
+          color: #39cdcc;
+          padding-bottom: 2px;
+          transition: all 0.1s ease;
+          border-left: 3px solid #364141;
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}

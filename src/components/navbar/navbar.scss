@@ -1,0 +1,136 @@
+.navbar {
+  height: 100px;
+  background: #ffffff;
+  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+  color: #213f7d;
+
+  .wrapper {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .search {
+      margin-left: 15px;
+      border: 0.5px solid lightgray;
+      padding: 3px;
+      width: 400px;
+      height: 40px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      input {
+        font-family: "Work Sans";
+        border: none;
+        outline: none;
+        padding: 12px 10px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16px;
+        color: #545f7d;
+        opacity: 0.7;
+      }
+      span {
+        position: absolute;
+        left: 580px;
+        top: 27.3px;
+        background-color: #39cdcc;
+        width: 56px;
+        height: 47px;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+
+        .icon {
+          padding: 10px 15px;
+          color: #ffffff;
+        }
+      }
+    }
+    .items {
+      display: flex;
+      align-items: center;
+
+      .item {
+        display: flex;
+        align-items: center;
+        margin-right: 30px;
+        position: relative;
+
+        .icon {
+          font-size: 22px;
+        }
+
+        .avatar {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 350px) and (max-width: 650px) {
+  .navbar {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    color: #213f7d;
+
+    .wrapper {
+      width: 50%;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .search {
+        margin-left: 10px;
+        border: 0.5px solid lightgray;
+        padding: 3px;
+        width: 150px;
+        height: 35px;
+
+        input {
+          padding: 12px 10px;
+        }
+        span {
+          position: absolute;
+          left: 239px;
+          top: 28.7px;
+          width: 26px;
+          height: 43px;
+
+          .icon {
+            padding: 10px 3px;
+            color: #ffffff;
+          }
+        }
+      }
+      .items {
+        display: flex;
+        align-items: center;
+
+        .item {
+          margin-right: 5px;
+          position: relative;
+
+          span {
+            display: none;
+          }
+
+          .icon {
+            font-size: 22px;
+          }
+
+          .avatar {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}

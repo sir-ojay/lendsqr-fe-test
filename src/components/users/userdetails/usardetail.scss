@@ -1,0 +1,84 @@
+.user--data {
+  margin: 40px;
+  padding: 0px 40px 0px 40px;
+  width: 1000px;
+  height: 970px;
+  background-color: #ffffff;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  color: #213f7d;
+
+  h2 {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    padding-bottom: 10px;
+  }
+
+  .personal--info {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto auto auto auto;
+  }
+  .edu--employ {
+    padding-top: 5px;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto auto auto;
+  }
+  .socials {
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+  }
+  .first--guarantor,
+  .second--guarantor {
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+
+    &:last-child {
+      padding-top: 40px;
+    }
+  }
+}
+@media screen and (min-width: 350px) and (max-width: 550px) {
+  .user--data {
+    margin: 10px;
+    padding: 0px 20px 0px 20px;
+    width: 83%;
+    height: 275vh;
+
+    h2 {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+    }
+
+    .personal--info {
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+    .edu--employ {
+      padding-top: 5px;
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+
+    .first--guarantor,
+    .second--guarantor,
+    .socials {
+      padding-top: 5px;
+      display: grid;
+      grid-template-columns: auto auto;
+      width: 95%;
+
+      &:last-child {
+        padding-top: 20px;
+      }
+    }
+  }
+}

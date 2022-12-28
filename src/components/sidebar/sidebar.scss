@@ -1,0 +1,170 @@
+.sidebar {
+  flex: 1;
+  background-color: #ffffff;
+  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+  width: fit-content;
+  min-height: 100vh;
+  font-family: "Work Sans";
+  font-style: normal;
+
+
+  .top {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #213f7d;
+      .union--img {
+        width: 24.75px;
+        height: 25px;
+        margin-top: 7.67px;
+        margin-left: 7px;
+      }
+      .logo--img {
+        width: 138.44px;
+        height: 36px;
+        margin: -9px 4px;
+      }
+    }
+  }
+
+  .center {
+    padding-left: 10px;
+    color: #213f7d;
+    opacity: 0.6;
+
+    
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+ 
+
+      .dashboard {
+        padding: 5px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #213f7d;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        .icon {
+          font-size: 14px;
+          color: #213f7d;
+        }
+      }
+
+      .title {
+        font-size: 12px;
+        font-weight: 500;
+        margin-top: 15px;
+        margin-bottom: 5px;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #39cdcd31;
+          border-left: 1px solid #213f7d;
+         
+        }
+
+        .icon {
+          font-size: 18px;
+          color: #213f7d;
+        }
+
+        span {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 19px;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width:350px) and (max-width:550px){
+  .sidebar{
+    width: fit-content;
+    min-height: 120vh;
+  
+    .top {
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+  
+      .logo {
+        font-size: 20px;
+        font-weight: bold;
+        color: #213f7d;
+        .union--img {
+          width: 10.75px;
+          height: 25px;
+          margin-top: 7.67px;
+          margin-left: 7px;
+        }
+        .logo--img {
+          width: 48.44px;
+          height: 36px;
+          margin: -9px 4px;
+        }
+      }
+    }
+  
+    .center {
+      padding-left: 10px;
+  
+      
+      ul {
+        list-style: none;
+      
+        .dashboard {
+          display: none;
+          padding: 5px;
+          margin-top: 15px;
+          margin-bottom: 10px;
+          .icon {
+            font-size: 14px;
+            color: #213f7d;
+          }
+        }
+  
+        .title {
+          display: none;
+          margin-top: 15px;
+          margin-bottom: 5px;
+        }
+  
+        li {
+          display: flex;
+          align-items: center;
+          padding: 5px;
+
+  
+          .icon {
+            font-size: 18px;
+            margin: 20px;
+          
+          }
+  
+          span {
+            display: none;
+    
+          }
+        }
+      }
+    }
+  }
+}
