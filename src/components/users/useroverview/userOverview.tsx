@@ -3,8 +3,9 @@ import "./useroverview.scss";
 import { AiOutlineUser } from "react-icons/ai";
 import { AiOutlineStar } from "react-icons/ai";
 import { AiFillStar } from "react-icons/ai";
+import { IUser } from "../userdetails/UserType";
 
-const userOverview = () => {
+const userOverview = ({ newUser }:{newUser:IUser}) => {
   return (
     <div className="user--overview">
       <div className="account--details">
@@ -13,7 +14,7 @@ const userOverview = () => {
         </div>
 
         <div className="name">
-          <p className="full--name">Grace Effiom</p>
+          <p className="full--name">{newUser.userName}</p>
           <p>LSQFf587g90</p>
         </div>
 

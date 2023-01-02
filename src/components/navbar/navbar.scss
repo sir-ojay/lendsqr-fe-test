@@ -6,6 +6,32 @@
   align-items: center;
   color: #213f7d;
 
+  .top {
+    align-items: center;
+    justify-content: center;
+    width: 15.5%;
+    margin-left: 1.5%;
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #213f7d;
+      .union--img {
+        width: 10%;
+        height: 25px;
+      }
+      .logo--img {
+        width: 50%;
+        height: 36px;
+        margin: -9px 4px;
+      }
+    }
+  }
+
+  .mobile_nav {
+    display: none;
+  }
+
   .wrapper {
     width: 100%;
     padding: 20px;
@@ -13,41 +39,6 @@
     align-items: center;
     justify-content: space-between;
 
-    .search {
-      margin-left: 15px;
-      border: 0.5px solid lightgray;
-      padding: 3px;
-      width: 400px;
-      height: 40px;
-      background-color: #ffffff;
-      border-radius: 8px;
-      input {
-        font-family: "Work Sans";
-        border: none;
-        outline: none;
-        padding: 12px 10px;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 16px;
-        color: #545f7d;
-        opacity: 0.7;
-      }
-      span {
-        position: absolute;
-        left: 580px;
-        top: 27.3px;
-        background-color: #39cdcc;
-        width: 56px;
-        height: 47px;
-        border-top-right-radius: 8px;
-        border-bottom-right-radius: 8px;
-
-        .icon {
-          padding: 10px 15px;
-          color: #ffffff;
-        }
-      }
-    }
     .items {
       display: flex;
       align-items: center;
@@ -71,66 +62,24 @@
     }
   }
 }
-@media screen and (min-width: 350px) and (max-width: 650px) {
+@media screen and (max-width: 768px) {
   .navbar {
-    height: 100px;
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    color: #213f7d;
+    padding: 1em;
+    height: 100px;
+    max-width: 100%;
+
+    .mobile_nav {
+      display: block;
+      margin-right: 1em;
+      font-size: 1.8em;
+      cursor: pointer;
+      color: #213f7d;
+    }
 
     .wrapper {
-      width: 50%;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      .search {
-        margin-left: 10px;
-        border: 0.5px solid lightgray;
-        padding: 3px;
-        width: 150px;
-        height: 35px;
-
-        input {
-          padding: 12px 10px;
-        }
-        span {
-          position: absolute;
-          left: 239px;
-          top: 28.7px;
-          width: 26px;
-          height: 43px;
-
-          .icon {
-            padding: 10px 3px;
-            color: #ffffff;
-          }
-        }
-      }
-      .items {
-        display: flex;
-        align-items: center;
-
-        .item {
-          margin-right: 5px;
-          position: relative;
-
-          span {
-            display: none;
-          }
-
-          .icon {
-            font-size: 22px;
-          }
-
-          .avatar {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-          }
-        }
-      }
+      display: none;
     }
   }
 }

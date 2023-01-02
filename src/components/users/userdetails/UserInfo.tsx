@@ -1,44 +1,8 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 import "./userinfo.scss";
-import { useEffect, useState } from "react";
-import {IUser} from "./UserType";
+import { IUser } from "./UserType";
 
-const UsarDetails = () => {
-  const params = useParams();
-  console.log(params);
-  const [newUser, setNewRow] = useState<IUser>({});
-
-  useEffect(() => {
-    const user = localStorage.getItem("user");
-    if (!user) {
-      fetch(
-        `https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/${params.id}`
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
-          localStorage.setItem("user", JSON.stringify(data));
-          setNewRow(data);
-        });
-    } else {
-      let cacheUser = JSON.parse(user);
-      if (cacheUser.id === params.id) {
-        setNewRow(JSON.parse(user));
-      } else {
-        fetch(
-          `https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/${params.id}`
-        )
-          .then((response) => response.json())
-          .then((data) => {
-            console.log(data);
-            localStorage.setItem("user", JSON.stringify(data));
-            setNewRow(data);
-          });
-      }
-    }
-  }, [params.id]);
-
+const UsarDetails = ({ newUser }:{newUser:IUser}) => {
   return (
     <div className="user--data">
       <h2>Personal Information</h2>
@@ -146,11 +110,11 @@ const UsarDetails = () => {
         </div>
         <div>
           <p>Email Address</p>
-          <h2>{}</h2>
+          <h2>-</h2>
         </div>
         <div>
           <p>Relationship</p>
-          <h2>{}</h2>
+          <h2>-</h2>
         </div>
       </div>
 
@@ -169,7 +133,7 @@ const UsarDetails = () => {
         </div>
         <div>
           <p>Email Address</p>
-          <h2>{}</h2>
+          <h2>-</h2>
         </div>
         <div>
           <p>Relationship</p>

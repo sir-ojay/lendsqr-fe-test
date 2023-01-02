@@ -1,8 +1,8 @@
 .form--container {
   padding: 20px;
   position: absolute;
-  top: 510px;
-  left: 233px;
+  top: 520px;
+  left: 253px;
   display: block;
   box-sizing: border-box;
   width: 270px;
@@ -71,5 +71,11 @@
     background-color: #39cdcc;
     border: 1px solid #39cdcc;
     border-radius: 8px;
+  }
+}
+@media screen and (min-width: 350px) and (max-width: 550px) {
+  .form--container {
+    top: 954px;
+    left: 138px;
   }
 }
