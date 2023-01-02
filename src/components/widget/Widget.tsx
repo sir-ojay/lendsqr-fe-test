@@ -5,10 +5,30 @@ import {GiCoins } from "react-icons/gi";
 import { HiOutlineUsers } from "react-icons/hi";
 import { HiOutlineUserGroup } from "react-icons/hi";
 
-const Widget = ({type}) => {
+const Widget = ({type} :{type:string}) => {
+
    
 
-    let data;
+    let data: {
+      title: string;
+      value: string;
+      icon: JSX.Element;
+    } = {
+      title: "USERS",
+      value: "2,453",
+      icon: (
+        <HiOutlineUsers
+          className="icon"
+          style={{
+            color: "#DF18FF",
+            backgroundColor: "rgb(232, 179, 231)",
+            borderRadius: "100px",
+          }}
+        />
+      ),
+    };
+
+  
 
     switch (type) {
         case "users":

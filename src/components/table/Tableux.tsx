@@ -14,49 +14,23 @@ import List from "../list/List";
 import "./tableux.scss";
 import { Link } from "react-router-dom";
 import { BsThreeDotsVertical } from "react-icons/bs";
-
-// function createData(
-//   orgName,
-//   userName,
-//   email,
-//   phoneNumber,
-//   createdAt,
-//   employmentStatus
-// ) {
-//   return { orgName, userName, email, phoneNumber, createdAt, employmentStatus };
-// }
-
-// const rows = [
-//   createData(
-//     "orgName",
-//     "userName",
-//     "email",
-//     "phoneNumber",
-//     "createdAt",
-//     "employmentStatus"
-//   ),
-//   createData(
-//     "orgName",
-//     "userName",
-//     "email",
-//     "phoneNumber",
-//     "createdAt",
-//     "employmentStatus"
-//   ),
-// ];
+import { IRows } from "./TableType";
 
 export default function StickyHeadTable() {
   const [open, setOpen] = React.useState(false);
-  const [rows, setRow] = React.useState([]);
+  const [rows, setRow] = React.useState<IRows[]>([]);
   const [openModal, setOpenModal] = React.useState(false);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
-  const handleChangePage = (event, newPage) => {
+  const toggle = () => setOpen(!open);
+
+  const handleChangePage = (event: any, newPage: number) => {
+    console.log(newPage, event.target);
     setPage(newPage);
   };
 
-  const handleChangeRowsPerPage = (event) => {
+  const handleChangeRowsPerPage = (event: any) => {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
@@ -87,57 +61,24 @@ export default function StickyHeadTable() {
               <TableRow className="tablerow">
                 <TableCell className="tableCell">
                   ORGANZATION {}
-                  <FilterListIcon
-                    onClick={() => {
-                      setOpen(!open);
-                    }}
-                    className="ico"
-                  />
+                  <FilterListIcon onClick={toggle} className="ico" />
                 </TableCell>
                 <TableCell className="tableCell">
-                  USERNAME{" "}
-                  <FilterListIcon
-                    onClick={() => {
-                      setOpen(!open);
-                    }}
-                    className="ico"
-                  />
+                  USERNAME <FilterListIcon onClick={toggle} className="ico" />
                 </TableCell>
                 <TableCell className="tableCell">
-                  EMAIL{" "}
-                  <FilterListIcon
-                    onClick={() => {
-                      setOpen(!open);
-                    }}
-                    className="ico"
-                  />
+                  EMAIL <FilterListIcon onClick={toggle} className="ico" />
                 </TableCell>
                 <TableCell className="tableCell">
                   PHONE NUMBER{" "}
-                  <FilterListIcon
-                    onClick={() => {
-                      setOpen(!open);
-                    }}
-                    className="ico"
-                  />
+                  <FilterListIcon onClick={toggle} className="ico" />
                 </TableCell>
                 <TableCell className="tableCell">
                   DATE JOINED{" "}
-                  <FilterListIcon
-                    onClick={() => {
-                      setOpen(!open);
-                    }}
-                    className="ico"
-                  />
+                  <FilterListIcon onClick={toggle} className="ico" />
                 </TableCell>
                 <TableCell className="tableCell">
-                  STATUS{" "}
-                  <FilterListIcon
-                    onClick={() => {
-                      setOpen(!open);
-                    }}
-                    className="ico"
-                  />
+                  STATUS <FilterListIcon onClick={toggle} className="ico" />
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -155,7 +96,7 @@ export default function StickyHeadTable() {
                       <TableCell key={Date.now()}>{row.phoneNumber}</TableCell>
                       <TableCell key={Date.now()}>{row.createdAt}</TableCell>
                       <TableCell key={Date.now()}>
-                        {row.education.employmentStatus}
+                        {row?.education?.employmentStatus}
                       </TableCell>
 
                       <TableCell key={Date.now()}>
@@ -185,8 +126,8 @@ export default function StickyHeadTable() {
         />
       </Paper>
 
-      {open ? <FormOrg /> : ""}
-      {openModal ? <List /> : ""}
+      {open && <FormOrg />}
+      {openModal && <List />}
     </div>
   );
 }

@@ -6,15 +6,15 @@ const FormOrg = () => {
     <div className="dropdown-menu">
       <form className="form--container px-4 py-3">
         <div className="form-group">
-          <label for="FormEmail">Organization</label>
+          <label htmlFor="FormEmail">Organization</label>
           <select name="" id="">
             <option value="select">Select</option>
             <option value=""></option>
-            <option value=""></option>
+        
           </select>
         </div>
         <div className="form-group">
-          <label for="Formusername">Username</label>
+          <label htmlFor="Formusername">Username</label>
           <input
             type="text"
             className="form-control"
@@ -23,7 +23,7 @@ const FormOrg = () => {
           />
         </div>
         <div className="form-group">
-          <label for="FormEmail1">Email address</label>
+          <label htmlFor="FormEmail1">Email address</label>
           <input
             type="email"
             className="form-control"
@@ -33,7 +33,7 @@ const FormOrg = () => {
         </div>
         <div className="form-group">
           <div>
-            <label for="formDate">Date</label>
+            <label htmlFor="formDate">Date</label>
           </div>
 
           <input
@@ -44,7 +44,7 @@ const FormOrg = () => {
           />
         </div>
         <div className="form-group">
-          <label for="formPhone">Phone number</label>
+          <label htmlFor="formPhone">Phone number</label>
           <input
             type="tel"
             className="form-control"
@@ -53,11 +53,11 @@ const FormOrg = () => {
           />
         </div>
         <div className="form-group">
-          <label for="formStatus">Status</label>
+          <label htmlFor="formStatus">Status</label>
           <select name="" id="">
             <option value="select">Select</option>
             <option value=""></option>
-            <option value=""></option>
+         
           </select>
         </div>
 

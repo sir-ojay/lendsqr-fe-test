@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route element={<ProtectedRoutes />}>
             <Route path="/dashboard" element={<Home />} />
-            <Route exact path="/userdetails/:id" element={<UserDetails />} />
+            <Route path="/userdetails/:id" element={<UserDetails />} />
           </Route>
           <Route path="/" element={<Login />} />
         </Routes>

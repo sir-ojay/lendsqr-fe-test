@@ -1,47 +1,46 @@
 import React from "react";
-import {useParams} from "react-router-dom";   
-import "./usardetail.scss";
-import { useEffect ,useState} from "react";
+import { useParams } from "react-router-dom";
+import "./userinfo.scss";
+import { useEffect, useState } from "react";
+import {IUser} from "./UserType";
 
 const UsarDetails = () => {
   const params = useParams();
-  console.log(params)
-  const [newUser, setNewRow] = useState({});
+  console.log(params);
+  const [newUser, setNewRow] = useState<IUser>({});
 
   useEffect(() => {
-
-const user = localStorage.getItem("user")
-if(!user){
-
-    fetch(`https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/${params.id}`)       
-      .then((response) => response.json())        
-      .then((data) => {
-        console.log(data)
-        localStorage.setItem("user",JSON.stringify(data ))
-         setNewRow(data)
-      });
-    }else{
-      let cacheUser = JSON.parse(user)
-      if(cacheUser.id===params.id){
-      setNewRow(JSON.parse(user))
-    }else{
-      fetch(`https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/${params.id}`)       
-      .then((response) => response.json())        
-      .then((data) => {
-        console.log(data)
-        localStorage.setItem("user",JSON.stringify(data ))
-         setNewRow(data)
-      });
-
-    }
+    const user = localStorage.getItem("user");
+    if (!user) {
+      fetch(
+        `https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/${params.id}`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          localStorage.setItem("user", JSON.stringify(data));
+          setNewRow(data);
+        });
+    } else {
+      let cacheUser = JSON.parse(user);
+      if (cacheUser.id === params.id) {
+        setNewRow(JSON.parse(user));
+      } else {
+        fetch(
+          `https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users/${params.id}`
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            localStorage.setItem("user", JSON.stringify(data));
+            setNewRow(data);
+          });
+      }
     }
   }, [params.id]);
+
   return (
-
-
-    
-    <div className="user--data">   
-
+    <div className="user--data">
       <h2>Personal Information</h2>
       <div className="personal--info">
         <div>
@@ -58,15 +57,15 @@ if(!user){
         </div>
         <div>
           <p>Bvn</p>
-          <h2>{}</h2>
+          <h2>-</h2>
         </div>
         <div>
           <p>Gender</p>
-          <h2>{}</h2>
+          <h2>-</h2>
         </div>
         <div>
           <p>Marital status</p>
-          <h2>{}</h2>
+          <h2>-</h2>
         </div>
         <div>
           <p>Children</p>
@@ -96,23 +95,19 @@ if(!user){
         </div>
         <div>
           <p>Duration of employment</p>
-          <h2>{newUser?.education?.duration
-}</h2>
+          <h2>{newUser?.education?.duration}</h2>
         </div>
         <div>
           <p>office email</p>
-          <h2>{newUser?.education?.officeEmail
-}</h2>
+          <h2>{newUser?.education?.officeEmail}</h2>
         </div>
         <div>
           <p>Monthly income</p>
-          <h2>{newUser?.education?.monthlyIncome
-}</h2>
+          <h2>{newUser?.education?.monthlyIncome}</h2>
         </div>
         <div>
           <p>loan repayment</p>
-          <h2>{newUser?.education?.loanRepayment
-}</h2>
+          <h2>{newUser?.education?.loanRepayment}</h2>
         </div>
       </div>
 
@@ -126,8 +121,7 @@ if(!user){
         </div>
         <div>
           <p>Facebook</p>
-          <h2>{newUser?.socials?.facebook
-}</h2>
+          <h2>{newUser?.socials?.facebook}</h2>
         </div>
         <div>
           <p>Instagram</p>
@@ -142,7 +136,9 @@ if(!user){
       <div className="first--guarantor">
         <div>
           <p>full name</p>
-          <h2>{newUser?.guarantor?.firstName} {newUser?.guarantor?.lastName}</h2>
+          <h2>
+            {newUser?.guarantor?.firstName} {newUser?.guarantor?.lastName}
+          </h2>
         </div>
         <div>
           <p>phone number</p>
@@ -163,14 +159,13 @@ if(!user){
       <div className="second--guarantor">
         <div>
           <p>full name</p>
-          <h2>{newUser?.profile?.firstName
-} {newUser?.profile?.lastName
-}</h2>
+          <h2>
+            {newUser?.profile?.firstName} {newUser?.profile?.lastName}
+          </h2>
         </div>
         <div>
           <p>phone number</p>
-          <h2>{newUser?.profile?.phoneNumber
-}</h2>
+          <h2>{newUser?.profile?.phoneNumber}</h2>
         </div>
         <div>
           <p>Email Address</p>

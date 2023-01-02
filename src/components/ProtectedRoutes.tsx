@@ -2,7 +2,7 @@ import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 
 const userAuth = ()=> {
-    let userDetails=  JSON.parse(sessionStorage.getItem('userDetails'));
+    let userDetails=  JSON.parse(sessionStorage.getItem('userDetails') || "");
     return userDetails;
 }
 

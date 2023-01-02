@@ -3,13 +3,16 @@ import Navbar from "../../components/navbar/Navbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import ButtonGreen from "../../components/buttons/buttongreen/buttonGreen";
 import ButtonRed from "../../components/buttons/buttonred/buttonRed";
-import UsarDetails from "../../components/users/userdetails/UsarDetails";
+import UsarDetails from "../../components/users/userdetails/UserInfo";
 import UserOverview from "../../components/users/useroverview/userOverview";
 import "./userdetailspg.scss";
 import { Link } from "react-router-dom";
 import { GrLinkPrevious } from "react-icons/gr";
 
 const UserDetails = () => {
+
+    // className?: string;
+  
   return (
     <div className="user--page">
       <Sidebar />
@@ -28,8 +31,8 @@ const UserDetails = () => {
           <p className="user">User Details</p>
 
           <div className="buttons">
-            <ButtonRed className="button--red" />
-            <ButtonGreen className="button--red"  />
+            <ButtonRed  />
+            <ButtonGreen  />
           </div>
         </div>
     

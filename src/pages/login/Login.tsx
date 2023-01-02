@@ -4,13 +4,16 @@ import { useState, useEffect } from "react";
 import Image from "../../assets/pablo-sign-in 1.svg";
 import Logo from "../../assets/lendsqr.png";
 import Union from "../../assets/Union.png";
+import { useNavigate } from "react-router-dom";   
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const [formValid, setFormValid] = useState(false);
 
   const [form, setForm] = useState({
     email: "",
-    password: "",
+    password: ""
   });
 
   useEffect(() => {
@@ -23,25 +26,27 @@ const Login = () => {
 
   const [data, setData] = useState({});
 
-  const handleChange = (e) => {
+  const handleChange = (e: { target: { name: any; value: any } }) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
     });
   };
 
-  const error = document.getElementById("errorMessage");
+  const error = document.getElementById("errorMessage") as HTMLElement;
 
-  const submitForm = (e) => {
+  const submitForm = (e: { preventDefault: () => void }) => {
     e.preventDefault();
+
+    console.log(data);
+
     if (formValid === true) {
       setData({
         ...form,
       });
       sessionStorage.setItem("userDetails", JSON.stringify({ ...form }));
-      console.log(data);
       error.textContent = "";
-      window.location = "/dashboard";
+      navigate("/dashboard");
     } else {
       error.style.color = "red";
       error.textContent = "Enter your details";
@@ -99,7 +104,6 @@ const Login = () => {
           </div>
         </form>
       </div>
-      
     </div>
   );
 };
